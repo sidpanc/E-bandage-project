@@ -101,7 +101,7 @@ void sendDataToSigFox(char animalName)
   */
 
   typedef struct __attribute__ ((packed)) sigfox_message {
-  char name;
+  char parameters;
   uint8_t lastMessageStatus;
   } SigfoxMessage;
 
@@ -119,7 +119,7 @@ void sendDataToSigFox(char animalName)
   // Wait at least 30ms after first configuration (100ms before)
   delay(100);
 
-  msg.name=animalName;        
+  msg.parameters=parameters;        
 
   SigFox.status();
   delay(1);
